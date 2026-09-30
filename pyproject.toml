@@ -1,0 +1,20 @@
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "polybot"
+version = "0.1.0"
+description = "Paper-first Polymarket research bot foundation"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = ["polymarket-client==0.11.0"]
+
+[project.scripts]
+polybot = "polybot.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/polybot"]
+
+[tool.uv]
+required-version = ">=0.8"

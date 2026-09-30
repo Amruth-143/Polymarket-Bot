@@ -1,0 +1,31 @@
+# Synthetic lifecycle-smoke inputs only. These are NOT your chosen bankroll,
+# acceptable loss, category, or strategy. No trading or fills occur in Task 3.
+mode = "paper"
+purpose = "smoke"
+money_unit = "pUSD"
+price_unit = "pUSD/share"
+bankroll_pusd = "1000.00"
+
+[prices]
+min_pusd_per_share = "0.01"
+max_pusd_per_share = "0.99"
+
+[risk]
+max_order_exposure_pusd = "10.00"
+max_market_exposure_pusd = "50.00"
+max_total_exposure_pusd = "100.00"
+# Separate from bankroll. Lifetime equity drawdown; no automatic daily reset.
+max_loss_pusd = "25.00"
+loss_basis = "equity_drawdown"
+loss_window = "lifetime"
+max_open_orders = 5
+max_open_orders_per_market = 2
+
+[freshness]
+max_book_age_seconds = 10
+max_account_age_seconds = 30
+
+[storage]
+# Relative paths resolve against this TOML file, not the working directory.
+paper_directory = "data/paper"
+live_directory = "data/live"

@@ -1,0 +1,9 @@
+# Operator selected Crypto on 2026-09-25. No trading is enabled.
+category = "crypto"
+# Initial activity filter only; this is not executable liquidity or bankroll.
+minimum_volume = "0"
+volume_unit = "gamma_reported_volume"
+page_size = 20
+# A bounded scan is explicitly incomplete if more pages remain; no pilot inclusion.
+max_pages = 10
+allowlist = "pilot-allowlist.json"

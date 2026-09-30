@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "category": "crypto",
+  "reviews": [
+    {
+      "market_id": "3849939",
+      "metadata_sha256": "bcd7bbb690ca05c2ac74ca0bf7b25fa93e11b0f55b401b73a5cea741cf1bfa5a",
+      "reviewer": "Codex Task 5 metadata review; see docs/pilot-review.md",
+      "reviewed_at": "2026-09-25T11:20:09Z"
+    }
+  ]
+}

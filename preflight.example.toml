@@ -1,0 +1,16 @@
+# Secret-free Task 15 example. Copy locally and set the referenced values in a
+# protected process environment or secret store. Never put secret values here.
+schema_version = 1
+product = "international_prediction_markets"
+expected_wallet_type = "DEPOSIT_WALLET"
+# Dubai was supplied as a city; the operating country remains unresolved.
+operator_country = "UNRESOLVED"
+# Set true only after the operator checks current terms and account eligibility.
+operator_eligibility_confirmed = false
+
+[environment]
+signer_private_key_env = "POLYMARKET_PRIVATE_KEY"
+account_wallet_env = "POLYMARKET_WALLET_ADDRESS"
+clob_api_key_env = "POLYMARKET_CLOB_API_KEY"
+clob_api_secret_env = "POLYMARKET_CLOB_API_SECRET"
+clob_api_passphrase_env = "POLYMARKET_CLOB_API_PASSPHRASE"

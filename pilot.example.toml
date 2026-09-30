@@ -1,0 +1,49 @@
+# Frozen Task 14 paper-research configuration. These limits are tested research
+# inputs, not the operator's live bankroll or evidence of a profitable strategy.
+# Changing any byte creates a different recorded run configuration hash.
+schema_version = 1
+pilot_version = "paper-pilot-v1"
+strategy_version = "manual-hold-v1"
+frozen_at = "2026-09-29T00:00:00Z"
+market_id = "3849939"
+event_id = "905012"
+metadata_sha256 = "bcd7bbb690ca05c2ac74ca0bf7b25fa93e11b0f55b401b73a5cea741cf1bfa5a"
+outcome_ids = ["yes", "no"]
+scheduled_end = "2026-10-01T04:00:00Z"
+settlement_observation_buffer_hours = 24
+
+[strategy]
+holding_mode = "hold_to_resolution"
+target_position_shares = "10"
+max_order_shares = "10"
+uncertainty_buffer_pusd_per_share = "0.02"
+intent_ttl_seconds = 60
+max_book_age_seconds = 10
+max_remaining_horizon_seconds = 604800
+
+[risk]
+# Explicit UTC accounting boundary; no location is inferred from the computer.
+daily_timezone = "UTC"
+min_price_pusd_per_share = "0.01"
+max_price_pusd_per_share = "0.99"
+max_daily_loss_pusd = "25"
+max_drawdown_pusd = "25"
+max_order_exposure_pusd = "10"
+max_market_exposure_pusd = "50"
+max_group_exposure_pusd = "50"
+max_total_exposure_pusd = "100"
+max_open_orders = 5
+max_open_orders_per_market = 2
+max_mark_age_seconds = 10
+max_strategy_age_seconds = 60
+
+[paper]
+latency_seconds = "2"
+cancellation_delay_seconds = "1"
+
+[collector]
+queue_size = 256
+max_connections = 1000
+backoff_seconds = ["1", "2", "4", "8", "16", "30"]
+snapshot_min_interval_seconds = "0.25"
+poll_interval_seconds = "0.25"
